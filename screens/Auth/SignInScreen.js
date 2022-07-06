@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const SIgnInScreen = () => {
+const SignInScreen = () => {
     return (
         <View>
-            <Text>SIgnInScreen</Text>
+            <Text>SignInScreen</Text>
         </View>
     )
 }
 
-export default SIgnInScreen
+export default SignInScreen
