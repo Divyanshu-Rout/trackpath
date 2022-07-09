@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const TranckDetailScreen = () => {
+const TrackDetailScreen = () => {
     return (
         <View>
             <Text>TranckDetailScreen</Text>
@@ -9,4 +9,4 @@ const TranckDetailScreen = () => {
     )
 }
 
-export default TranckDetailScreen
+export default TrackDetailScreen

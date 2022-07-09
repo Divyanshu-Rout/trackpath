@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const SignUpScreen = () => {
+const TrackCreateScreen = () => {
     return (
         <View>
-            <Text>SignUpScreen</Text>
+            <Text>TrackCreateList</Text>
         </View>
     )
 }
 
-export default SignUpScreen
+export default TrackCreateScreen
