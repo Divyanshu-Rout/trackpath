@@ -1,8 +1,7 @@
-import { View, Text } from 'react-native'
 import React from 'react'
 import SignUpScreen from './src/screens/Auth/SignUpScreen'
 import SignInScreen from './src/screens/Auth/SignInScreen'
-import AccountScreen from './src/screens/MainScreens/AccountScreen'
+import AccountScreen from './src/screens/MainScreens/Account/AccountScreen'
 import TrackCreateScreen from './src/screens/MainScreens/TrackCreateScreen'
 import TrackListScreen from './src/screens/MainScreens/TrackListScreen'
 import TrackDetailScreen from './src/screens/MainScreens/TrackDetailScreen'
@@ -13,6 +12,10 @@ import { createAppContainer, createSwitchNavigator } from 'react-navigation'
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native'
+
+//context
+
+import { Provider as AuthProvider } from './src/context/AuthContext'
 
 
 
@@ -50,26 +53,37 @@ const App = () => {
   }
 
   return (
-    <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="Signup"
-          component={SignUpScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Signin"
-          component={SignInScreen}
-          options={{ headerShown: false }}
-        />
-        <Stack.Screen
-          name="Tab"
-          component={MyTabs}
-          options={{ headerShown: false }}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <AuthProvider>
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Signup"
+            component={SignUpScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Signin"
+            component={SignInScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Tab"
+            component={MyTabs}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </AuthProvider>
+
   )
 }
+
+// export default () => {
+//   return (
+//     <AuthProvider>
+//       <App />
+//     </AuthProvider>
+//   )
+// }
 
 export default App
